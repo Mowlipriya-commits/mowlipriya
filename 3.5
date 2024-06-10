@@ -1,0 +1,9 @@
+a=int(input())
+b=int(input())
+c=int(input())
+if a==b==c:
+    print("That's a equilateral triangle")
+elif((a==b and a!=c) or(a==c and a!=b) or (b==c and b!=a) or (b==a and b!=c) or (c==a and c!=b) or (c==b and c!=a)):
+    print("That's a isosceles triangle")
+else:
+    print("That's a scalene triangle")
