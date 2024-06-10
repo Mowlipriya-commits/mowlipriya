@@ -1,0 +1,79 @@
+def process_student_data(n, student_data):
+    students = {}
+    
+    # Read student data
+    for data in student_data:
+        name, test_mark, assignment_mark, lab_mark = data.split()
+        test_mark = int(test_mark)
+        assignment_mark = int(assignment_mark)
+        lab_mark = int(lab_mark)
+        students[name] = {
+            'test_mark': test_mark,
+            'assignment_mark': assignment_mark,
+            'lab_mark': lab_mark,
+            'average': (test_mark + assignment_mark + lab_mark) / 3
+        }
+    
+    # Identify the student with the highest average score
+    highest_average_students = []
+    highest_average = -1
+    for name, marks in students.items():
+        if marks['average'] > highest_average:
+            highest_average = marks['average']
+            highest_average_students = [name]
+        elif marks['average'] == highest_average:
+            highest_average_students.append(name)
+    
+    # Identify the student who has the highest Assignment marks
+    highest_assignment_students = []
+    highest_assignment = -1
+    for name, marks in students.items():
+        if marks['assignment_mark'] > highest_assignment:
+            highest_assignment = marks['assignment_mark']
+             elif marks['assignment_mark'] == highest_assignment:
+            highest_assignment_students.append(name)
+    
+    # Identify the student with the lowest lab marks
+    lowest_lab_students = []
+    lowest_lab = 101
+    for name, marks in students.items():
+        if marks['lab_mark'] < lowest_lab:
+            lowest_lab = marks['lab_mark']
+            lowest_lab_students = [name]
+        elif marks['lab_mark'] == lowest_lab:
+            lowest_lab_students.append(name)
+    lowest_lab_students.sort()  # Sort alphabetically
+    
+    # Identify the student with the lowest average score
+    lowest_average_students = []
+    lowest_average = 101
+    for name, marks in students.items():
+        if marks['average'] < lowest_average:
+            lowest_average = marks['average']
+            lowest_average_students = [name]
+        elif marks['average'] == lowest_average:
+            lowest_average_students.append(name)
+    
+    return {
+        'highest_average': highest_average_students,
+        'highest_assignment': highest_assignment_students,
+        'lowest_lab': lowest_lab_students,
+        'lowest_average': lowest_average_students
+    }
+    # Main function to handle the input as depicted in the example
+def main():
+    n = int(input())
+    student_data = [input() for _ in range(n)]
+    
+    result = process_student_data(n, student_data)
+    
+    print(" ".join(result['highest_average']))
+    print(" ".join(result['highest_assignment']))
+    print(" ".join(result['lowest_lab']))
+    print(" ".join(result['lowest_average']))
+
+# Run the main function
+main()
+
+
+            highest_assignment_students = [name]
