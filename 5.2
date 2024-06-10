@@ -1,0 +1,14 @@
+a=input()
+clet=0
+cdig=0
+csym=0
+for i in a:
+    if i<='9' and i>='0':
+        cdig+=1
+    elif (i<='Z' and i>='A') or (i>='a' and i<='z'):
+        clet+=1
+    else:
+        csym+=1
+print(clet)
+print(cdig)
+print(csym)
