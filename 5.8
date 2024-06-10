@@ -1,0 +1,9 @@
+s1=input()
+tokens=s1.split("@")
+first=tokens[0]
+ind=tokens[1].find(".")
+com=tokens[1].split(".")
+for i in range(ind+1,len(tokens[1])):
+    print(tokens[1][i],end="")
+print("\n",com[0],sep="")
+print(first)
