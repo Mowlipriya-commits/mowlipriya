@@ -1,0 +1,6 @@
+a=int(input())
+a=float(a)
+b=0.05*a
+c=0.18*a
+d=a+b+c
+print("The tax is","{:.2f}".format(b),"and the tip is","{:.2f},".format(c),"making the total","{:.2f}".format(d))
