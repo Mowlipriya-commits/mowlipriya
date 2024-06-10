@@ -1,0 +1,11 @@
+list=[int(x) for x in input().split()]
+temp=[]
+for i in list:
+    if i not in temp:
+        temp.append(i)
+temp.sort()
+list1=[0]*1000
+for i in list:
+    list1[i]+=1
+for i in temp:
+    print(i,list1[i])
