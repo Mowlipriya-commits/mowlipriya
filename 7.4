@@ -1,0 +1,9 @@
+a=input()
+b=a.split(" ")
+temp=[0]*10
+for i in b:
+    temp[int(i)]+=1
+for i in range(0,len(b)):
+    if temp[i]!=0:
+        if temp[i]>1:
+            print(i)
