@@ -1,0 +1,13 @@
+def remove_common_characters(s1, s2):
+    # Create a set of characters from s2 for efficient lookup
+    s2_set = set(s2)
+
+    # Filter out characters from s1 that are not in s2_set
+    result = ''.join(char for char in s1 if char.lower() not in s2_set)
+
+    return result.strip()  # Remove leading and trailing spaces
+
+s1=input()
+s2=input()
+print(remove_common_characters(s1,s2))
+        
